@@ -535,7 +535,7 @@ class OBJECT_OT_render_lightfield(bpy.types.Operator):
         factor = LF.baseline_x_m * LF.focal_length * LF.focus_dist * max_res
 
         # prepare depth output node
-        right = bpy.data.scenes[scene_key].node_tree.nodes['Render Layers'].outputs['Z']
+        right = bpy.data.scenes[scene_key].node_tree.nodes['Render Layers'].outputs['Depth']
         depth_view_node = bpy.data.scenes[scene_key].node_tree.nodes.new('CompositorNodeViewer')
         depth_view_node.use_alpha = False
         left = depth_view_node.inputs[0]
